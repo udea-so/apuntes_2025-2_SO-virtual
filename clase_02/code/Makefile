@@ -1,37 +1,16 @@
-# Compilador y banderas de compilación
-CC = gcc
-# CFLAGS define las opciones para el compilador:
-# -g:         Incluye información de depuración en el ejecutable.
-# -Wall:      Habilita la mayoría de las advertencias comunes (muy recomendado).
-# -Wextra:    Habilita advertencias adicionales que -Wall no cubre.
-# -std=c99:   Usa el estándar C99 para el lenguaje.
-CFLAGS = -g -Wall -Wextra -std=c99
+all: cpu threads io mem
 
-# Banderas para el enlazador (linker)
-LDFLAGS =
+cpu: cpu.c
+	gcc -o cpu cpu.c -Wall
 
-# Encuentra automáticamente todos los archivos fuente .c en el directorio
-SOURCES = $(wildcard *.c)
-# Genera los nombres de los ejecutables a partir de los archivos fuente
-# (ej. de "cpu.c" se genera el objetivo "cpu")
-TARGETS = $(patsubst %.c,%,$(SOURCES))
+threads: threads.c
+	gcc -o threads threads.c -Wall -pthread
 
-# .PHONY evita conflictos con archivos que se llamen 'all' o 'clean'
-.PHONY: all clean
+io: io.c
+	gcc -o io io.c -Wall
 
-# El objetivo 'all' es el predeterminado y compila todos los programas
-all: $(TARGETS)
+mem: mem.c
+	gcc -o mem mem.c -Wall
 
-# Regla de patrón estática para compilar cualquier ejecutable a partir de su .c
-# $@ es el nombre del objetivo (ej. 'cpu')
-# $< es el nombre del primer prerrequisito (ej. 'cpu.c')
-$(TARGETS): %: %.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
-
-# Banderas específicas para el objetivo 'threads'
-# Se añade -pthread solo al compilar y enlazar 'threads'
-threads: LDFLAGS += -pthread
-
-# Objetivo para limpiar los archivos ejecutables generados
 clean:
-	rm -f $(TARGETS)
+	rm -f cpu threads io mem
