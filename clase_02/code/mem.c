@@ -17,7 +17,7 @@ void wait(int howlong) {
 }
 
 /* 
-gcc mem.c - o memory
+gcc mem.c - o mem
 
 ./mem 1
 
