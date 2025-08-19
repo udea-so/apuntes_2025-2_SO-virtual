@@ -1,7 +1,4 @@
 
-<p align="center">
-  <img src="https://www.udea.edu.co/wps/wcm/connect/udea/86585346-6e46-4b5a-9743-1f3f33d3a95c/escudo-udea-horizontal.png?MOD=AJPERES" alt="Logo UdeA" width="400">
-</p>
 
 # Resumen General
 En esta sección, vamos a cubrir temas que nos ayudarán a responder las siguientes preguntas:
