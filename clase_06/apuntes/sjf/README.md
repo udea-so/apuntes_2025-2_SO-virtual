@@ -56,8 +56,6 @@ gcc sjf.c -o sjf; ./sjf
 
 When all jobs arrive simultaneously, SJF efficiently minimizes the waiting time. However, when job arrival times differ, SJF can run into the same challenges as FIFO, especially if a longer job arrives before shorter ones.
 
-
-
 Under what condition does SJF outperform FIFO?
 - [ ] SJF always outperforms FIFO
 - [ ] SJF never outperforms FIFO
