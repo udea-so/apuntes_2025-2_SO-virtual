@@ -14,7 +14,9 @@ Apuntes a mano de las clases a lo largo del curso
 |2	 | 3 | 19/08/2025 | Clase 3 - Procesos | Apuntes clase 3 [[pdf]](clase_03/SO-clase_03_19-08-2025.pdf) | Queda pendiente la parte de CPU sharing y las estructuras de datos asociadas a los procesos. **Importante**: Ver el video **UN PROGRAMA no es un PROCESO** ([link](https://www.youtube.com/watch?v=7ge7u5VUSbE))|
 |2	 | ~~4~~| 21/08/2025 | --- | --- | La clase no se pudo dar por problemas en el equipo de trabajo |
 |2	 | 4 | 22/08/2025 | Clase 4 - Procesos | Apuntes clase 4 [[pdf]](clase_04/SO-clase_04_22-08-2025.pdf) | Parte de la sesión de laboratorio se empleo para la clase, se logro culminar el tema de procesos |
-|3	 | 5| 26/08/2025 | Clase 5 - LDE | Apuntes clase 5 [[pdf]](clase_05/SO-clase_05_26-08-2025.pdf) | Quedo faltando explicar el caso de funcionamiento para varios procesos de usuario y las aproximaciones apropiativa y cooperativa. **Importante**: Ver el video **Cómo un solo bit dentro de su procesador protege la integridad de su sistema operativo** ([link](https://www.youtube.com/watch?v=H4SDPLiUnv4&t=1052s)) |
-|3	 | 6| 28/08/2025 |  | | |
+|3	 | 5| 26/08/2025 | Clase 5 - LDE (Parte 1) | Apuntes clase 5 [[pdf5]](clase_05/SO-clase_0_26-08-2025.pdf) | Quedo faltando explicar el caso de funcionamiento para varios procesos de usuario y las aproximaciones apropiativa y cooperativa. **Importante**: Ver el video **Cómo un solo bit dentro de su procesador protege la integridad de su sistema operativo** ([link](https://www.youtube.com/watch?v=H4SDPLiUnv4&t=1052s)) |
+|3	 | 6| 28/08/2025 | Clase 5 - LDE (Parte 2) | Apuntes clase 5 [[pdf5]](clase_05/SO-clase_0_26-08-2025.pdf) | Se culminaron los temas pendientes de LDE |
+|4	 | 7| 02/09/2025 | Clase 6 - Politicas de planificación | Apuntes clase 6 [[pdf]](clase_06/SO-clase_06_28-08-2025.pdf) | Se trato el tema de politicas de planificación. **Importante**: Ver el video **The Fancy Algorithms That Make Your Computer Feel Smoother** ([link](https://www.youtube.com/watch?v=O2tV9q6784k)) |
+|4	 | 8| 04/09/2025 |  | | |
 
 
