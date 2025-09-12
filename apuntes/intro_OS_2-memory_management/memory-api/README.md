@@ -809,3 +809,14 @@ Fill in the blanks below.
 > 
 > Both `brk` and `sbrk` are system calls, not library calls; release is not a memory command.
 
+## Summary
+
+* This lesson covered various was to interact with the memory API.
+* Programs allocate memory on either the **stack** or **heap**.
+* The most common way to allocate memory is with **malloc()**.
+* You should release memory back to the system when it is no longer needed. This is done with **free()**.
+* You saw several common mistakes when managing memory: forgetting to allocate memory, not allocating enough memory, forgetting to free memory, freeing memory too soon, etc.
+* Library management calls make system calls to **brk()** and **sbrk()** to manage physical memory.
+* There are additional ways to allocate memory, specifically **mmap()** and **calloc()**.
+* You can reallocate memory with **realloc()**.
+
