@@ -1,0 +1,66 @@
+# Archivos de dependencias y compilación
+# -------------------------------------
+# Archivos objeto generados durante la compilación
+*.o
+*.obj
+
+# Archivos de biblioteca estática y dinámica
+*.a
+*.so
+*.dll
+*.lib
+*.dylib
+
+# Ejecutables
+# Es una buena práctica poner los ejecutables en un directorio como 'bin' o 'build'
+# y luego ignorar ese directorio.
+# Si no tienes un directorio específico, puedes ignorar los ejecutables por su nombre.
+# Por ejemplo, si tu ejecutable se llama 'mi_programa':
+# mi_programa
+# mi_programa.exe
+
+# O ignorar todos los archivos sin extensión (común en Linux/macOS)
+# !(*.*)
+# Cuidado: esto puede ser muy agresivo. Es mejor usar un directorio de compilación.
+
+# Directorios de compilación
+# --------------------------
+# Es la mejor práctica para mantener los artefactos de compilación separados.
+build/
+bin/
+dist/
+out/
+
+# Archivos del editor y del IDE
+# -----------------------------
+# Visual Studio Code
+.vscode/
+
+# Archivos de CLion
+.idea/
+
+# Archivos de Vim
+*.swp
+*.swo
+*~
+
+# Archivos de macOS
+# -----------------
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de depuración
+# ----------------------
+# Archivos de core dump
+core.*
+*.stackdump
+
+# Archivos generados por herramientas de profiling (como gprof)
+gmon.out
+
+# Archivos de configuración local
+# -------------------------------
+# Si tienes archivos de configuración que no deben ir al repositorio
+config.local
+.env
