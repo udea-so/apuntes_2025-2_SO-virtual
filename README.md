@@ -17,6 +17,10 @@ Apuntes a mano de las clases a lo largo del curso
 |3	 | 5| 26/08/2025 | Clase 5 - LDE (Parte 1) | Apuntes clase 5 [[pdf5]](clase_05/SO-clase_0_26-08-2025.pdf) | Quedo faltando explicar el caso de funcionamiento para varios procesos de usuario y las aproximaciones apropiativa y cooperativa. **Importante**: Ver el video **Cómo un solo bit dentro de su procesador protege la integridad de su sistema operativo** ([link](https://www.youtube.com/watch?v=H4SDPLiUnv4&t=1052s)) |
 |3	 | 6| 28/08/2025 | Clase 5 - LDE (Parte 2) | Apuntes clase 5 [[pdf5]](clase_05/SO-clase_0_26-08-2025.pdf) | Se culminaron los temas pendientes de LDE |
 |4	 | 7| 02/09/2025 | Clase 6 - Politicas de planificación | Apuntes clase 6 [[pdf]](clase_06/SO-clase_06_28-08-2025.pdf) | Se trato el tema de politicas de planificación. **Importante**: Ver el video **The Fancy Algorithms That Make Your Computer Feel Smoother** ([link](https://www.youtube.com/watch?v=O2tV9q6784k)) |
-|4	 | 8| 04/09/2025 |  | | |
+|4	 | 8| 04/09/2025 | Clase 7 - MLFQ| Apuntes clase 7 [[pdf]](clase_07/SO-clase_07_04-09-2025.pdf) | En la ultima parte del video Ver el video **The Fancy Algorithms That Make Your Computer Feel Smoother** ([link](https://www.youtube.com/watch?v=O2tV9q6784k)) se habla de MLFQ|
+|5|9|09/09/2025|Clase 8 - Virtualización de memoria| Apuntes clase 8 [[pdf]](clase_08/SO-clase_08_09-09-2025.pdf)||
+|5|10|11/09/2025|Clase 9 - Dynamic Reallocation (Base & Bound)| Apuntes clase 9 [[pdf]](clase_09/SO-clase_09_11-09-2025.pdf)||
+|6|11|16/09/2025|Clase 10 - Segmentación| Apuntes clase 9 [[pdf]](clase_09/SO-clase_09_11-09-2025.pdf)||
+|6|12|18/09/2025|Clase 10 - Paginación| Apuntes clase 10 ||
 
 
