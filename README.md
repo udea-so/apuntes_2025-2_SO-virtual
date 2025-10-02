@@ -18,9 +18,11 @@ Apuntes a mano de las clases a lo largo del curso
 |3	 | 6| 28/08/2025 | Clase 5 - LDE (Parte 2) | Apuntes clase 5 [[pdf5]](clase_05/SO-clase_0_26-08-2025.pdf) | Se culminaron los temas pendientes de LDE |
 |4	 | 7| 02/09/2025 | Clase 6 - Politicas de planificación | Apuntes clase 6 [[pdf]](clase_06/SO-clase_06_28-08-2025.pdf) | Se trato el tema de politicas de planificación. **Importante**: Ver el video **The Fancy Algorithms That Make Your Computer Feel Smoother** ([link](https://www.youtube.com/watch?v=O2tV9q6784k)) |
 |4	 | 8| 04/09/2025 | Clase 7 - MLFQ| Apuntes clase 7 [[pdf]](clase_07/SO-clase_07_04-09-2025.pdf) | En la ultima parte del video Ver el video **The Fancy Algorithms That Make Your Computer Feel Smoother** ([link](https://www.youtube.com/watch?v=O2tV9q6784k)) se habla de MLFQ|
-|5|9|09/09/2025|Clase 8 - Virtualización de memoria| Apuntes clase 8 [[pdf]](clase_08/SO-clase_08_09-09-2025.pdf)||
-|5|10|11/09/2025|Clase 9 - Dynamic Reallocation (Base & Bound)| Apuntes clase 9 [[pdf]](clase_09/SO-clase_09_11-09-2025.pdf)||
-|6|11|16/09/2025|Clase 10 - Segmentación| Apuntes clase 9 [[pdf]](clase_09/SO-clase_09_11-09-2025.pdf)||
-|6|12|18/09/2025|Clase 10 - Paginación| Apuntes clase 10 ||
-
-
+|5|9|09/09/2025|Clase 8 - Virtualización de memoria| Apuntes clase 8 [[pdf]](clase_08/SO-clase_08_09-09-2025.pdf)|Se introduce el modulo de virtualizacion de memoria mostrando conceptos claves como: memoria virtual, memoria fisica y mapa de memoria. Tambien se abordan algunos conceptos de punteros y manejo de memoria en C|
+|5|10|11/09/2025|Clase 9 - Dynamic Reallocation (Base & Bound)| Apuntes clase 9 [[pdf]](clase_09/SO-clase_09_11-09-2025.pdf)|Se introduce el concepto de Dynamic Reallocation (Base & Bound)|
+|6|11|16/09/2025|Clase 10 - Segmentación| Apuntes clase 9 [[pdf]](clase_09/SO-clase_09_11-09-2025.pdf)|Se introduce la traducción de direcciones por segmentación|
+|6|12|18/09/2025|Clase 10 - Paginación| Apuntes clase 10 [[pdf]](clase_10/SO-clase_10_18-09-2025.pdf) |Paginación (parte 1)|
+|7|13|23/09/2025|Clase 10 - Paginación| Apuntes clase 10 [[pdf]](clase_10/SO-clase_10_18-09-2025.pdf) |Paginación (parte 2)|
+|7|14|25/09/2025|Clase 10 - Paginación| Apuntes clase 10 [[pdf]](clase_10/SO-clase_10_18-09-2025.pdf) |Paginación (parte 3)|
+|8|15|30/09/2025|Clase 11 - TLB|  |TLB (Parte 1)|
+|9|16|30/09/2025|Clase 11 - TLB|  |TLB (Parte 2)|
