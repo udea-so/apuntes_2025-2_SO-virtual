@@ -25,7 +25,7 @@ typedef struct __myret_t {
 void *mythread(void *arg) {
   myarg_t *m = (myarg_t *) arg;
   printf("%d %d\n", m->a, m->b);
-  myret_t *r = malloc(sizeof(myret_t));
+  myret_t *r = malloc(sizeof(myret_t)); // allocated in heap (Dont forget to free it)
   r->x = 1;
   r->y = 2;
   return (void *) r;
@@ -43,7 +43,8 @@ int main(int argc, char *argv[]) {
                                  // waiting inside of the
                                  // pthread_join() routine.
   printf("returned %d %d\n", m->x, m->y);
-  free(m);
+  free(m); // free the allocated memory
+  // printf("original %d %d\n", args.a, args.b);  
   return 0;
 }
 
