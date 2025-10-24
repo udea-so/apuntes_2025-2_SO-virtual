@@ -24,5 +24,11 @@ Apuntes a mano de las clases a lo largo del curso
 |6|12|18/09/2025|Clase 10 - Paginación| Apuntes clase 10 [[pdf]](clase_10/SO-clase_10_18-09-2025.pdf) |Paginación (parte 1)|
 |7|13|23/09/2025|Clase 10 - Paginación| Apuntes clase 10 [[pdf]](clase_10/SO-clase_10_18-09-2025.pdf) |Paginación (parte 2)|
 |7|14|25/09/2025|Clase 10 - Paginación| Apuntes clase 10 [[pdf]](clase_10/SO-clase_10_18-09-2025.pdf) |Paginación (parte 3)|
-|8|15|30/09/2025|Clase 11 - TLB|  |TLB (Parte 1)|
-|9|16|30/09/2025|Clase 11 - TLB|  |TLB (Parte 2)|
+|8|15|30/09/2025|Clase 11 - TLB| Apuntes clase 11 [[pdf]](clase_11/SO-clase_11_25-09-2025.pdf) |TLB (Parte 1)|
+|8|16|02/10/2025|Clase 11 - TLB| Apuntes clase 11 [[pdf]](clase_11/SO-clase_11_25-09-2025.pdf) |TLB (Parte 2)|
+|9|17|07/10/2025|Clase 12 - Mecanismos	| Apuntes clase 12 [[pdf]](clase_12/SO-clase_12_02-10-2025.pdf) |Mecanismos|
+|9|18|09/10/2025|Clase 13 - Políticas	| Apuntes clase 13 [[pdf]](clase_13/SO-clase_13_09-10-2025.pdf) |Políticas|
+|10|19|14/10/2025|Clase 14 - Hilos y concurrencia | Apuntes clase 14 [[pdf]](clase_14/SO-clase_14_14-10-2025.pdf) |Hilos y concurrencia (parte 1)|
+|10|20|16/10/2025|Clase 14 - Hilos y concurrencia | Apuntes clase 14 [[pdf]](clase_14/SO-clase_14_14-10-2025.pdf) |Hilos y concurrencia (parte 2)|
+|11|21|21/10/2025|Clase 14 - Hilos y concurrencia | Apuntes clase 14 [[pdf]](clase_14/SO-clase_14_14-10-2025.pdf) |Hilos y concurrencia (parte 2)|
+|11|22|23/10/2025|Clase 15 - Locks | Apuntes clase 15  | Locks (Parte 1)|
