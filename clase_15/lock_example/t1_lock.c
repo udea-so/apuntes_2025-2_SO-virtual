@@ -20,8 +20,7 @@ pthread_mutex_t lock; // lock variable (Mutex)
 
 void *mythread(void *arg) {
     char *letter = arg;
-    int i; // stack (private per thread) 
-    printf("%s: begin [addr of i: %p]\n", letter, &i);
+    int i; // stack (private per thread)     
     for (i = 0; i < max; i++) {
         pthread_mutex_lock(&lock);      // -------------------------------------- Acquire the lock (adquire(L)) ----------------------------------------------
         counter = counter + 1;          // critical section: only one
@@ -44,7 +43,7 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "main: mutex init failed\n");
         exit(1);
     }
-    printf("main: begin [counter = %d] [%lX]\n", counter, (long unsigned int) &counter);
+    printf("main: begin [counter = %d]\n", counter);
     pthread_create(&p1, NULL, mythread, "A"); 
     pthread_create(&p2, NULL, mythread, "B");
     // join waits for the threads to finish
