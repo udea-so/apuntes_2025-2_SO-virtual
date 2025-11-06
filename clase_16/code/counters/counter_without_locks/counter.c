@@ -1,7 +1,7 @@
 #include "counter.h"
 
 /*
-gcc -Wall -I../include -c counter.c -lpthread 
+gcc -Wall -I./include -c counter.c -lpthread 
 */
 
 void init(counter_t *c) {

@@ -6,8 +6,8 @@
 #include "counter.h"
 
 /*
-gcc -Wall -I../include -c counter_without_locks.c -lpthread 
-gcc -Wall -I../include *.o -lpthread -o bad_counter 
+gcc -Wall -I./include -c counter_without_locks.c -lpthread 
+gcc -Wall -I./include *.o -lpthread -o bad_counter 
 */
 
 #define CNT_END 1000000

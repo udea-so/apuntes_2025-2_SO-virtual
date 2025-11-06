@@ -27,12 +27,12 @@ Ubicado en el directorio `counter_without_locks`. Ejecute los siguientes comando
 - Ejecutable con parámetros fijos (bad_counter):
     
   ```
-  gcc -Wall -I. counter.c counter_without_locks.c -lpthread -o bad_counter
+  gcc -Wall -I./include counter.c counter_without_locks.c -lpthread -o bad_counter
   ```
 - Ejecutable CLI (counter_test):
     
   ```
-  gcc -Wall -I../include test_counter_cli.c counter.c -lpthread -o counter_test
+  gcc -Wall -I./include test_counter_cli.c counter.c -lpthread -o counter_test
   ```
 
 ## Ejecución y pruebas recomendadas
