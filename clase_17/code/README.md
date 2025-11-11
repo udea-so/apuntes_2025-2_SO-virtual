@@ -1,6 +1,8 @@
 # Ejemplos de variables de condicion
 
-## Problema
+## Parte 1 - Sobre la sincronización
+
+### Problema
 
 Dado el siguiente fragmento de código con hilos:
 
@@ -29,9 +31,9 @@ child
 parent: end
 ```
 
-## Soluciones
+### Soluciones
 
-### Solucion 1 - Ineficiente
+#### Solucion 1 - Ineficiente
 
 Esta solución ([ejemplo1.c](ejemplo1.c)) sirve pero el hilo padre desperdicia de CPU debido debido al spin-loop.
 
@@ -57,14 +59,13 @@ int main(int argc, char *argv[]) {
   printf("parent: begin\n");
   pthread_t c;
   pthread_create(&c, NULL, child, NULL); // create child
-  while (done == 0)
-	; // spin
+  while (done == 0); // spin
   printf("parent: end\n");
   return 0;
 }
 ```
 
-### Solucion 2 - Solución empleando variables de condicion
+#### Solucion 2 - Solución empleando variables de condicion
 
 Esta es una solución mejor, pues el hilo padre espera hasta que se de una *condición* antes de continuar. Para esto se hacen uso de Variables de condicion (CV) las cuales permiten que se realicen ciertas acciones o bloques de código si se cumplen determinadas condiciones.
 
@@ -126,7 +127,7 @@ void thr_join(void) {
 
 En el ejemplo anterior se emplean funciones claves `wait` y `signal`
 
-## Sobre las funciones `wait` y `signal`
+## Parte 2 - Sobre las funciones `wait` y `signal`
 
 En la biblioteca de hilos POSIX (Pthreads) se definen las funciones `pthread_cond_wait` y `pthread_cond_signal` para el manejo de variables de condición (CV). Estas son importantes pues permiten que varios hilos se puedan coordinar entre sí para acceder a recursos compartidos o ejecutar ciertas tareas en un orden específico.
 
@@ -156,3 +157,121 @@ Esta función se usa para despertar o notificar a uno de los hilos que están en
 >
 > **Donde**:
 > * **`cond`**: puntero a la variable de condición (`pthread_cond_t`) que se quiere señalizar para que despierte a un hilo en espera.
+
+## Parte 3 - Implementación de funciones de sincronización
+
+**Función `thr_exit()`**
+
+```c
+void thr_exit() {
+  Pthread_mutex_lock(&m);
+  done = 1;
+  Pthread_cond_signal(&c);
+  Pthread_mutex_unlock(&m);
+}
+```
+
+**Función `thr_join()`**
+
+```c
+void thr_join() {
+  Pthread_mutex_lock(&m);
+  while (done == 0) 
+	Pthread_cond_wait(&c, &m);
+  Pthread_mutex_unlock(&m);
+}
+```
+
+> * ¿Como hacer una reimplementación mas eficiente en la cual se logre que un hilo "padre" espere (haga join) a que un hilo "hijo" termine.
+> * ¿Por qué es importante cada una de las instrucciones que se encuentran en `thr_join` y `thr_exit`?
+
+
+### Implementación 1 - Implementación ROTA sin estado
+
+**Codigo**: [implementacion1.c](implementacion1.c)
+
+**Función `thr_exit()`**
+
+```c
+void thr_exit() {
+  pthread_mutex_lock(&m);
+  pthread_cond_signal(&c);
+  pthread_mutex_unlock(&m);
+}
+
+```
+
+**Función `thr_join()`**
+
+```c
+void thr_join() {
+  pthread_mutex_lock(&m);
+  pthread_cond_wait(&c, &m);
+  pthread_mutex_unlock(&m);
+}
+```
+
+
+Esta implementación **está rota** debido a aque no se usa una variable de estado (`done`). El fallo se debe a la perdida del **signal** (**Lost Wakeup**) lo cual genera un deadlock.
+
+### Implementación 2 - La implementación ROTA con Race Condition
+
+**Codigo**: [implementacion2.c](implementacion2.c)
+
+**Función `thr_exit()`**
+
+```c
+void thr_exit() {
+  done = 1;
+  pthread_cond_signal(&c);
+}
+```
+
+**Función `thr_join()`**
+
+```c
+void thr_join() {
+  pthread_mutex_lock(&m)
+  if (done == 0) {
+    pthread_cond_wait(&c);
+  }
+  pthread_mutex_unlock(&m);
+}
+```
+
+Esta versión introduce la variable de estado `done`, lo cual es correcto. Sin embargo, crea una condición de carrera (**race condition**) muy sutil porque no usa el mutex para proteger la variable done en ambos lados.
+
+Ademas de lo anterior, tambien es posible que se de una perdida de la señal (Lost Wakeup).
+
+
+### Implementación 3 - La implementación CORRECTA
+
+**Codigo**: [implementacion3.c](implementacion3.c)
+
+**Función `thr_exit()`**
+
+```c
+void thr_exit() {
+  pthread_mutex_lock(&m);
+  done = 1;
+  pthread_cond_signal(&c);
+  pthread_mutex_unlock(&m);
+}
+```
+
+**Función `thr_join()`**
+
+```c
+void thr_join() {
+  pthread_mutex_lock(&m)
+  if (done == 0) {
+    pthread_cond_wait(&c);
+  }
+  pthread_mutex_unlock(&m);
+}
+```
+
+Esta implementación funciona porque el `mutex` protege la variable de estado `done` en todo momento.
+
+> [!Tip]
+> Adquiera siempre el lock (con `pthread_mutex_lock`) antes de llamar a `pthread_cond_wait` o `pthread_cond_signal`.
