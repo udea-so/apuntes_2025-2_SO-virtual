@@ -5,7 +5,7 @@
 #include "mythreads.h"
 
 /*
-gcc -Wall -lpthread -o ejemplo2 -I. ejemplo2.c
+gcc -Wall -I. ejemplo2.c -o ejemplo2 -lpthread
 */
 
 int done = 0;

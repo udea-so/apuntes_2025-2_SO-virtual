@@ -4,7 +4,7 @@
 #include <pthread.h>
 
 /*
-gcc -Wall -lpthread -o ejemplo1 ejemplo1.c
+gcc -Wall -o ejemplo1 ejemplo1.c -lpthread
 */
 
 volatile int done = 0;
@@ -19,8 +19,7 @@ int main(int argc, char *argv[]) {
   printf("parent: begin\n");
   pthread_t c;
   pthread_create(&c, NULL, child, NULL); // create child
-  while (done == 0)
-	; // spin
+  while (done == 0); // spin
   printf("parent: end\n");
   return 0;
 }

@@ -5,7 +5,7 @@
 #include "mythreads.h"
 
 /*
-gcc -Wall -lpthread -o implementacion1.c -I. implementacion1.c
+gcc -Wall -I. implementacion1.c -o implementacion1 -lpthread
 */
 
 int done = 0;
@@ -23,7 +23,8 @@ void thr_join(void);
 int main(int argc, char *argv[]) {
   printf("parent: begin\n");
   pthread_t p;
-  Pthread_create(&p, NULL, child, NULL);
+  Pthread_create(&p, NULL, child, NULL);  
+  // sleep(2); 
   thr_join();
   printf("parent: end\n");
   return 0;

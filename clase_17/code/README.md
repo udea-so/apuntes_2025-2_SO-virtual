@@ -44,7 +44,7 @@ Esta solución ([ejemplo1.c](ejemplo1.c)) sirve pero el hilo padre desperdicia d
 #include <pthread.h>
 
 /*
-gcc -Wall -lpthread -o ejemplo1 ejemplo1.c
+gcc -Wall ejemplo1.c -lpthread -o ejemplo1
 */
 
 volatile int done = 0;
@@ -77,7 +77,7 @@ Esta es una solución mejor, pues el hilo padre espera hasta que se de una *cond
 #include "mythreads.h"
 
 /*
-gcc -Wall -lpthread -o ejemplo2 -I. ejemplo2.c
+gcc -Wall -I. ejemplo2.c -lpthread -o ejemplo2
 */
 
 int done = 0;
