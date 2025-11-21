@@ -57,4 +57,5 @@ Ejemplo que demuestra el uso de un semáforo como variable de condición para si
   rm -f sem_as_CV
   ```
 
-
+> [!Note]
+> **AI Disclosure:** This document was created with the assistance of Artificial Intelligence language models. The content has been reviewed, edited, and validated by a human author to ensure accuracy and quality.

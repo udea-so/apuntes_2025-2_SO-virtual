@@ -56,3 +56,6 @@ El siguiente ejemplo demuestra el uso de un semáforo binario como mutex para pr
   ```
   rm -f binary
   ```
+
+> [!Note]
+> **AI Disclosure:** This document was created with the assistance of Artificial Intelligence language models. The content has been reviewed, edited, and validated by a human author to ensure accuracy and quality.
