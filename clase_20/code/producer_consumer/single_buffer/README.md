@@ -1,6 +1,21 @@
-# Problema del productor-consumidor con un buffer de tamaño 1
+# Problema del Productor-Consumidor (Buffer Simple)
 
-## Explicación del Código (`pc_single.c`)
+Este proyecto implementa una solución clásica al problema de concurrencia del Productor-Consumidor utilizando un buffer de capacidad 1 y semáforos para orquestar la cooperación entre hilos.
+
+El objetivo es entender cómo dos hilos (uno que genera datos y otro que los procesa) pueden sincronizarse para no perder datos ni leer "basura".
+
+## Arquitectura del sistema
+
+```mermaid
+graph LR
+    P((Productor)) -- put() --> B[Buffer Compartido]
+    B -- get() --> C((Consumidor))
+    
+    subgraph Sincronización
+    S1[Semáforo Empty] -.-> P
+    S2[Semáforo Full] -.-> C
+    end
+```
 
 Este código implementa una solución al problema del **Productor-Consumidor** utilizando un **buffer de tamaño 1** y **semáforos** para la sincronización.
 
@@ -32,3 +47,4 @@ Este código implementa una solución al problema del **Productor-Consumidor** u
 ### Notas:
 -   Esta implementación asume un único productor (`producers = 1`) pero soporta múltiples consumidores.
 -   El uso de semáforos garantiza que el productor no sobrescriba datos antes de ser leídos y que el consumidor no lea datos inválidos o repetidos.
+
