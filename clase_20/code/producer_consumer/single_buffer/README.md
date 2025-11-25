@@ -100,4 +100,8 @@ Para profundizar en los conceptos de condiciones de carrera y deadlocks (interbl
 
 1.  **Análisis de Atomicidad**: Modifique el código para eliminar `sem_wait(&empty)` en el productor. Analice cómo esto viola la integridad del buffer al permitir sobrescritura de datos no leídos.
 2.  **Escalabilidad**: Modifique las variables `consumers` y `producers` en el `main` para que sean mayores a 1. Observe cómo el buffer simple ($N=1$) se convierte en un cuello de botella y cómo, sin un control de exclusión mutua adicional (Mutex) para los índices, se producirían condiciones de carrera si el buffer fuera un arreglo.
+  
+> [!NOTE]
+> **AI Disclosure:** This document was created with the assistance of Artificial Intelligence language models. The content has been reviewed, edited, and validated by a human author to ensure accuracy and quality.
+
 
