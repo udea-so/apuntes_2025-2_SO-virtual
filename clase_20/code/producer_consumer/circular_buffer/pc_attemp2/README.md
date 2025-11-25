@@ -27,7 +27,7 @@ graph LR
     C -- 3. Get Data --> B
     
     note[CRÍTICO: Si se retiene el Mutex <br/>mientras se espera el Semáforo,<br/>ocurre DEADLOCK] -.-> M
-````
+```
 
 ## Estructura del Proyecto
 

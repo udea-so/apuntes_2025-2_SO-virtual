@@ -30,7 +30,7 @@ graph LR
     B -- get(use) --> C1
 
     note[Fallo: Race Condition en índices 'fill' y 'use'] -.-> B
-````
+```
 
 ## Estructura del Proyecto
 
