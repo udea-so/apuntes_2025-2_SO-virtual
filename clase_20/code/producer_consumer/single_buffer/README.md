@@ -1,10 +1,14 @@
-# Problema del Productor-Consumidor (Buffer Simple)
+# Problema del Productor-Consumidor: Sincronización con Buffer Acotado (N=1)
 
-Este proyecto implementa una solución clásica al problema de concurrencia del Productor-Consumidor utilizando un buffer de capacidad 1 y semáforos para orquestar la cooperación entre hilos.
+## Descripción General
 
-El objetivo es entender cómo dos hilos (uno que genera datos y otro que los procesa) pueden sincronizarse para no perder datos ni leer "basura".
+Este proyecto ilustra una solución clásica al problema de concurrencia del **Productor-Consumidor** empleando **semáforos** como primitiva de sincronización. El objetivo es coordinar dos hilos de ejecución (un productor y un consumidor) que comparten un recurso de memoria común de tamaño fijo (Buffer de tamaño 1), garantizando la integridad de los datos y evitando condiciones de carrera.
 
-## Arquitectura del sistema
+La implementación se basa en el archivo `pc_single.c` y demuestra el uso de las operaciones atómicas `wait` (decrementar/bloquear) y `post` (incrementar/desbloquear).
+
+## Arquitectura del Sistema
+
+El siguiente diagrama ilustra la interacción entre los agentes y los mecanismos de sincronización:
 
 ```mermaid
 graph LR
@@ -16,35 +20,84 @@ graph LR
     S2[Semáforo Full] -.-> C
     end
 ```
+## Estructura del Proyecto
 
-Este código implementa una solución al problema del **Productor-Consumidor** utilizando un **buffer de tamaño 1** y **semáforos** para la sincronización.
+* **`pc_single.c`**: Código fuente principal que implementa la lógica de los hilos y las rutinas de sincronización.
 
-### Componentes Principales:
+* **`common.h` / `common_threads.h`**: Encabezados auxiliares para la gestión de tiempos y wrappers de la librería pthread.
 
-1.  **Buffer Compartido**:
-    -   `int buffer`: Variable global que actúa como el buffer de un solo espacio.
+* **`Makefile`**: Script de automatización para la compilación del binario.
 
-2.  **Semáforos**:
-    -   `sem_t empty`: Inicializado en **1**. Indica si el buffer está vacío y listo para recibir datos.
-    -   `sem_t full`: Inicializado en **0**. Indica si el buffer tiene datos listos para ser consumidos.
+## Mecanismo de Sincronización
 
-### Lógica de Funcionamiento:
+El sistema utiliza dos semáforos para orquestar el flujo de datos y asegurar la exclusión mutua implícita sobre el buffer de un solo elemento.
 
--   **Productor (`producer`)**:
-    1.  Espera a que el buffer esté vacío (`sem_wait(&empty)`).
-    2.  Escribe un valor en el buffer (`put(i)`).
-    3.  Señala que el buffer está lleno (`sem_post(&full)`).
-    4.  Al finalizar sus datos, envía un valor centinela (`-1`) para indicar a los consumidores que terminen.
-       
+### Variables de Estado y Semáforos
 
--   **Consumidor (`consumer`)**:
-    1.  Espera a que el buffer tenga datos (`sem_wait(&full)`).
-    2.  Lee el valor del buffer (`get()`).
-    3.  Señala que el buffer está vacío (`sem_post(&empty)`).
-    4.  Si lee el valor centinela (`-1`), termina su ejecución.
+1. **Buffer Compartido (`int buffer`)**: Espacio de memoria crítico donde se almacena temporalmente el dato producido. Al ser una variable global, su acceso debe ser controlado.
+2. **Semáforo `empty` (Inicializado en 1)**:
+   * **Semántica**: Representa la disponibilidad de espacio en el buffer para escribir.
+   * **Función**: Controla el acceso del productor. Un valor de 1 indica que el buffer está vacío y es seguro escribir.
+3. **Semáforo `full` (Inicializado en 0)**:
+   * **Semántica**: Representa la disponibilidad de datos en el buffer para leer.
+   * **Función**: Controla el acceso del consumidor. Un valor de 0 indica que no hay datos válidos para consumir, forzando al hilo a esperar.
 
+## Lógica de Ejecución
 
-### Notas:
--   Esta implementación asume un único productor (`producers = 1`) pero soporta múltiples consumidores.
--   El uso de semáforos garantiza que el productor no sobrescriba datos antes de ser leídos y que el consumidor no lea datos inválidos o repetidos.
+El algoritmo implementa un protocolo de paso de mensajes estricto. Las líneas referenciadas corresponden a los comentarios en `pc_single.c`.
+
+### Hilo Productor (`producer`)
+
+Su función es generar datos e insertarlos en el buffer crítico.
+
+1.  **Adquisición de Recurso (`sem_wait(&empty)`)**: [Línea P1]
+    El hilo solicita permiso para escribir. Si `empty` es 0 (buffer lleno), el hilo se bloquea hasta que el consumidor libere espacio. Si es 1, decrementar el semáforo y entra a la sección crítica.
+2.  **Operación de Escritura (`put(i)`)**: [Línea P2]
+    Se inserta el dato en la variable compartida `buffer`.
+3.  **Notificación de Disponibilidad (`sem_post(&full)`)**: [Línea P3]
+    El productor incrementa el semáforo `full`, señalizando al consumidor que existe un nuevo dato válido listo para ser procesado.
+4.  **Condición de Terminación**:
+    Al finalizar el ciclo de producción, se envía un valor centinela (`-1`) para notificar al consumidor el fin del flujo de datos.
+
+### Hilo Consumidor (`consumer`)
+
+Su función es procesar los datos generados por el productor.
+
+1.  **Espera de Datos (`sem_wait(&full)`)**: [Línea C1]
+    El hilo solicita permiso para leer. Si `full` es 0 (buffer vacío), el hilo se bloquea. Esto evita la lectura de datos basura o duplicados.
+2.  **Operación de Lectura (`get()`)**: [Línea C2]
+    Se extrae el valor del `buffer` a una variable local.
+3.  **Liberación de Recurso (`sem_post(&empty)`)**: [Línea C3]
+    El consumidor incrementa el semáforo `empty`, señalizando al productor que el buffer está libre nuevamente para recibir nuevos datos.
+
+## Compilación y Ejecución
+
+Para compilar y ejecutar el programa, utilice los siguientes comandos en su terminal:
+
+1.  **Compilar**:
+
+    ```bash
+    make
+    ```
+
+    Esto genera el ejecutable `pc_single` enlazando la librería `pthread`.
+
+2.  **Ejecutar**:
+
+    ```bash
+    ./pc_single
+    ```
+
+3.  **Limpiar Directorio**:
+
+    ```bash
+    make clean
+    ```
+
+## Actividades Académicas Sugeridas
+
+Para profundizar en los conceptos de condiciones de carrera y deadlocks (interbloqueos):
+
+1.  **Análisis de Atomicidad**: Modifique el código para eliminar `sem_wait(&empty)` en el productor. Analice cómo esto viola la integridad del buffer al permitir sobrescritura de datos no leídos.
+2.  **Escalabilidad**: Modifique las variables `consumers` y `producers` en el `main` para que sean mayores a 1. Observe cómo el buffer simple ($N=1$) se convierte en un cuello de botella y cómo, sin un control de exclusión mutua adicional (Mutex) para los índices, se producirían condiciones de carrera si el buffer fuera un arreglo.
 
