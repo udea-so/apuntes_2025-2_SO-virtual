@@ -275,3 +275,6 @@ Esta implementación funciona porque el `mutex` protege la variable de estado `d
 
 > [!Tip]
 > Adquiera siempre el lock (con `pthread_mutex_lock`) antes de llamar a `pthread_cond_wait` o `pthread_cond_signal`.
+
+> [!note]
+> **Nota sobre IA**: Este contenido fue elaborado y estructurado con la asistencia de un modelo de inteligencia artificial. Puede contener errores.
