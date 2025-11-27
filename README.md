@@ -39,6 +39,6 @@ Apuntes a mano de las clases a lo largo del curso
 |14|27|11/11/2025|Clase 17 - Variables de condicíon | Apuntes clase 17 [[pdf]](clase_17/SO-clase_17_11-11-2025.pdf) [[code]](clase_17/code/) | Clase 17 - Variables de condicíon (Parte 1) |
 |14|28|13/11/2025|Clase 18 - Variables de condicíon | Apuntes clase 18 [[pdf]](clase_18/SO-clase_18_13-11-2025.pdf) [[code]](clase_18/code/) | Clase 18 - Variables de condicíon (Parte 2) |
 |15|29|18/11/2025|Clase 18 - Variables de condicíon | Apuntes clase 18 [[pdf]](clase_18/SO-clase_18_13-11-2025.pdf) [[code]](clase_18/code/) | Clase 18 - Variables de condicíon (Parte 3) | 
-|15|30|20/11/2025| Clase 19 - Semaforos | Apuntes clase 19 [[pdf]](clase_19/SO-clase_19_18-11-2025.pdf) | Clase 19 - Semaforos (Parte 1) |
-|16|31|25/11/2025| Clase 20 - Semaforos | Apuntes clase 20 [[pdf]](clase_20/SO-clase_20_25-11-2025.pdf) | Clase 20 - Semaforos (Parte 2) |
+|15|30|20/11/2025| Clase 19 - Semaforos | Apuntes clase 19 [[pdf]](clase_19/SO-clase_19_18-11-2025.pdf) [[code]](clase_19/code/) | Clase 19 - Semaforos (Parte 1) |
+|16|31|25/11/2025| Clase 20 - Semaforos | Apuntes clase 20 [[pdf]](clase_20/SO-clase_20_25-11-2025.pdf) [[code]](clase_20/code/) | Clase 20 - Semaforos (Parte 2) |
 |16|32|27/11/2025| Clase 21 - Semaforos |  | Clase 21 - Semaforos (Parte 3) |
