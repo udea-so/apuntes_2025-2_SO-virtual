@@ -1,3 +1,3 @@
 # Clase 20 - Ejemplos
 
-En construccion...
+El ejemplo de esta clase se encuentra en el siguiente [link](producer_consumer/)
