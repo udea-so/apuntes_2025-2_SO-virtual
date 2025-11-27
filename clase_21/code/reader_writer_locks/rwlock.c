@@ -99,11 +99,35 @@ int main(int argc, char *argv[])
     write_loops = atoi(argv[2]);
 
     rwlock_init(&mutex);
-    pthread_t c1, c2;
-    Pthread_create(&c1, NULL, reader, NULL);
-    Pthread_create(&c2, NULL, writer, NULL);
-    Pthread_join(c1, NULL);
-    Pthread_join(c2, NULL);
+    
+ 
+    // w1 r1
+    pthread_t w1;
+    pthread_t r1;
+    Pthread_create(&r1, NULL, reader, NULL);
+    Pthread_create(&w1, NULL, writer, NULL);
+    Pthread_join(w1, NULL);
+    Pthread_join(r1, NULL);
+ 
+
+    /*
+    // w1 w2 r1 r2 r3 r4 
+    pthread_t w1, w2;
+    pthread_t r1, r2, r3, r4;
+    Pthread_create(&r1, NULL, reader, NULL);
+    Pthread_create(&w1, NULL, writer, NULL);
+    Pthread_create(&r2, NULL, reader, NULL);
+    Pthread_create(&w2, NULL, writer, NULL);
+    Pthread_create(&r3, NULL, reader, NULL);
+    Pthread_create(&r4, NULL, reader, NULL);
+    Pthread_join(w1, NULL);
+    Pthread_join(w2, NULL);
+    Pthread_join(r1, NULL);
+    Pthread_join(r2, NULL);
+    Pthread_join(r3, NULL);
+    Pthread_join(r4, NULL); 
+    */
+    
     printf("all done\n");
     return 0;
 }
