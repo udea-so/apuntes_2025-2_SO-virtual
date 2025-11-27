@@ -1,4 +1,4 @@
-# Lock examples — Resumen y guía rápida
+# Lock examples - Resumen y guía rápida
 
 ## Codigos
 
