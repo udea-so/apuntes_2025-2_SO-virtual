@@ -90,3 +90,9 @@ Para eliminar los archivos binarios, ejecute el siguiente comando:
 ```
 rm -f bad_counter counter_test
 ```
+
+> [!note]
+> **Nota sobre IA**: Este contenido fue elaborado y estructurado con la asistencia de un modelo de inteligencia artificial. Tenga en cuenta que puede contener errores.
+
+> [!warning]
+> **Aclaración**: Como todo código (especialmente los ejemplos didácticos diseñados pueden fallar (o de hecho fallan)), el contenido debe ser revisado críticamente y puede contener errores.

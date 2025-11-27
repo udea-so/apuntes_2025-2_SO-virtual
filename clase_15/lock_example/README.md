@@ -2,9 +2,9 @@
 
 ## Codigos
 
-- [`compare-and-swap.c`](compare-and-swap.c): Demostración de CAS (instrucción atómica `cmpxchg`) en ensamblador inline.
-- [t1_lock.c](t1_lock.c): Ejemplo en C con `pthreads` y `pthread_mutex_t` (protege un contador compartido).
-- [t1_lock.py](t1_lock.py): Ejemplo equivalente en Python usando `threading.Lock`.
+- [**`compare-and-swap.c`**](compare-and-swap.c): Demostración de CAS (instrucción atómica `cmpxchg`) en ensamblador inline.
+- [**`t1_lock.c`**](t1_lock.c): Ejemplo en C con `pthreads` y `pthread_mutex_t` (protege un contador compartido).
+- [**`t1_lock.py`**](t1_lock.py): Ejemplo equivalente en Python usando `threading.Lock`.
 
 ## Sobre los codigos
 
@@ -94,4 +94,4 @@ rm -f compare-and-swap t1_lock
 > **Nota sobre IA**: Este contenido fue elaborado y estructurado con la asistencia de un modelo de inteligencia artificial. 
 
 > [!warning]
-> **Aclaración**: Como todo código (especialmente los ejemplos didácticos diseñados para fallar), el contenido debe ser revisado críticamente y puede contener errores.
+> **Aclaración**: Como todo código (especialmente los ejemplos didácticos diseñados pueden fallar (o de hecho fallan)), el contenido debe ser revisado críticamente y puede contener errores.

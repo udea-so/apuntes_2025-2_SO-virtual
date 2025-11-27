@@ -109,3 +109,9 @@ Estos resultados permiten discutir el equilibrio entre **rendimiento y precisió
 ## 7. Conclusión
 
 Este experimento proporciona una base práctica para comprender cómo la **sincronización fina (fine-grained locking)** y la **relajación del control global** pueden mejorar el rendimiento en entornos concurrentes. Sin embargo, también pone de manifiesto la pérdida de exactitud y la necesidad de elegir cuidadosamente los parámetros de actualización según el contexto de aplicación.
+
+> [!note]
+> **Nota sobre IA**: Este contenido fue elaborado y estructurado con la asistencia de un modelo de inteligencia artificial. Tenga en cuenta que puede contener errores.
+
+> [!warning]
+> **Aclaración**: Como todo código (especialmente los ejemplos didácticos diseñados pueden fallar (o de hecho fallan)), el contenido debe ser revisado críticamente y puede contener errores.

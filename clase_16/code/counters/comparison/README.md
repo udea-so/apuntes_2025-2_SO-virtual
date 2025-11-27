@@ -56,3 +56,9 @@ Para visualizar estos resultados gráficamente:
 4.  Ejecute todas las celdas.
 
 El *notebook* leerá el archivo `results.csv`, generará una gráfica comparativa y mostrará una tabla con los datos de rendimiento. Esta gráfica es la herramienta principal para analizar la escalabilidad de cada implementación.
+
+> [!note]
+> **Nota sobre IA**: Este contenido fue elaborado y estructurado con la asistencia de un modelo de inteligencia artificial. Tenga en cuenta que puede contener errores.
+
+> [!warning]
+> **Aclaración**: Como todo código (especialmente los ejemplos didácticos diseñados pueden fallar (o de hecho fallan)), el contenido debe ser revisado críticamente y puede contener errores.

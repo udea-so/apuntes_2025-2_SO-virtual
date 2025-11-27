@@ -58,3 +58,6 @@ Breve guía para compilar y ejecutar los ejemplos en este directorio. Supuestos:
   ```
   rm -f *.o bad_counter counter_test sloppy_counter precise_counter
   ```
+
+> [!note]
+> **Nota sobre IA**: Este contenido fue elaborado y estructurado con la asistencia de un modelo de inteligencia artificial. Puede contener errores.
