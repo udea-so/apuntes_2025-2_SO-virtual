@@ -31,14 +31,14 @@ Apuntes a mano de las clases a lo largo del curso
 |10|19|14/10/2025|Clase 14 - Hilos y concurrencia | Apuntes clase 14 [[pdf]](clase_14/SO-clase_14_14-10-2025.pdf) [[code]](clase_14/) |Hilos y concurrencia (parte 1)|
 |10|20|16/10/2025|Clase 14 - Hilos y concurrencia | Apuntes clase 14 [[pdf]](clase_14/SO-clase_14_14-10-2025.pdf) [[code]](clase_14/) | Hilos y concurrencia (parte 2)|
 |11|21|21/10/2025|Clase 14 - Hilos y concurrencia | Apuntes clase 14 [[pdf]](clase_14/SO-clase_14_14-10-2025.pdf) [[code]](clase_14/) | Hilos y concurrencia (parte 2)|
-|11|22|23/10/2025|Clase 15 - Locks | Apuntes clase 15  | Locks (Parte 1)|
-|12|23|28/10/2025||   | |
-|12|24|30/10/2025||   | |
-|13|25|04/11/2025||   | |
-|13|26|06/11/2025||   | |
-|14|27|11/11/2025||   | |
-|14|28|13/11/2025||   | |
-|15|29|18/11/2025||   | |
-|15|30|20/11/2025||   | |
-|16|31|25/11/2025||   | |
-|16|32|27/11/2025||   | |
+|11|22|23/10/2025|Clase 15 - Locks | Apuntes clase 15 [[pdf]](clase_15/SO-clase_15_23-10-2025.pdf) | Locks (Parte 1)|
+|12|23|28/10/2025|Clase 15 - Locks| Apuntes clase 15 [[pdf]](clase_15/SO-clase_15_23-10-2025.pdf)  | Clase 15 - Locks (Parte 1) |
+|12|24|30/10/2025|Clase 15 - Locks| Apuntes clase 15 [[pdf]](clase_15/SO-clase_15_23-10-2025.pdf)  | Clase 15 - Locks (Parte 2) |
+|13|25|04/11/2025|Clase 15 - Locks| Apuntes clase 15 [[pdf]](clase_15/SO-clase_15_23-10-2025.pdf) | Clase 15 - Locks (Parte 3) |
+|13|26|06/11/2025|Clase 16 - Estructuras de datos concurrentes| Apuntes clase 16 [[pdf]](clase_16/SO-clase_16_06-11-2025.pdf)  | Clase 16 - Estructuras de datos concurrentes |
+|14|27|11/11/2025|Clase 17 - Variables de condicíon | Apuntes clase 17 [[pdf]](clase_17/SO-clase_17_11-11-2025.pdf)  | Clase 17 - Variables de condicíon (Parte 1) |
+|14|28|13/11/2025|Clase 18 - Variables de condicíon | Apuntes clase 18 [[pdf]](clase_18/SO-clase_18_13-11-2025.pdf)  | Clase 18 - Variables de condicíon (Parte 2) |
+|15|29|18/11/2025|Clase 18 - Variables de condicíon | Apuntes clase 18 [[pdf]](clase_18/SO-clase_18_13-11-2025.pdf)  | Clase 18 - Variables de condicíon (Parte 3) | 
+|15|30|20/11/2025| Clase 19 - Semaforos | Apuntes clase 19 [[pdf]](clase_19/SO-clase_19_18-11-2025.pdf) | Clase 19 - Semaforos (Parte 1) |
+|16|31|25/11/2025| Clase 20 - Semaforos | Apuntes clase 20 [[pdf]](clase_20/SO-clase_20_25-11-2025.pdf) | Clase 20 - Semaforos (Parte 2) |
+|16|32|27/11/2025| Clase 21 - Semaforos |  | Clase 20 - Semaforos (Parte 3) |
