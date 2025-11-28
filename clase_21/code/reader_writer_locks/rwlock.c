@@ -101,17 +101,19 @@ int main(int argc, char *argv[])
     rwlock_init(&mutex);
     
  
-    // w1 r1
+    // w1 r1 (Descomente este bloque para probar un escritor y un lector)
+    
     pthread_t w1;
     pthread_t r1;
     Pthread_create(&r1, NULL, reader, NULL);
     Pthread_create(&w1, NULL, writer, NULL);
     Pthread_join(w1, NULL);
     Pthread_join(r1, NULL);
- 
+    
 
+    
+    // w1 w2 r1 r2 r3 r4 (Descomente este bloque para probar dos escritores y cuatro lectores) 
     /*
-    // w1 w2 r1 r2 r3 r4 
     pthread_t w1, w2;
     pthread_t r1, r2, r3, r4;
     Pthread_create(&r1, NULL, reader, NULL);
@@ -127,6 +129,7 @@ int main(int argc, char *argv[])
     Pthread_join(r3, NULL);
     Pthread_join(r4, NULL); 
     */
+    
     
     printf("all done\n");
     return 0;
